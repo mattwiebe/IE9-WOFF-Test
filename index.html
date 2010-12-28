@@ -1,59 +1,91 @@
 <!doctype html>  
 
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title></title>
+  <title>IE9 WOFF Support Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style type="text/css">
+<style>
 	@font-face {
-		font-family: 'ChunkFive Regular';
-		src: url('fonts/chunkfive-roman-webfont.eot');
-		src: local('☺'), url('fonts/League_Gothic.woff') format('woff'), url('fonts/League_Gothic.ttf') format('truetype');
+		font-family: IrishStandard;
+		src: url('fonts/chunkfive.eot');
+		src: local('☺'), url('fonts/League_Gothic.woff');
 	}
 	@font-face {
-		font-family: WOFF;
-		src: url('fonts/chunkfive-roman-webfont.eot'), url('fonts/League_Gothic.woff') format('woff'), url('fonts/League_Gothic.ttf') format('truetype');
+		font-family: EOTFirstNoLocal;
+		src: url('fonts/chunkfive.eot'), url('fonts/League_Gothic.woff');
 	}
-	
 	@font-face {
-		font-family:backasswards;
+		font-family: WOFFFirstNoLocal;
+		src: url('fonts/League_Gothic.woff'), url('fonts/chunkfive.eot');
+	}
+	@font-face {
+		font-family: WOFFFirstLocal;
 		src: url('fonts/League_Gothic.woff');
-		src: local('☺'), url('fonts/chunkfive-roman-webfont.eot'), url('fonts/League_Gothic.ttf') format('truetype');
+		src: local('☺'), url('fonts/chunkfive.eot');
 	}
 	@font-face {
-		font-family: 'Jiminy';
-		src: url('fonts/chunkfive-roman-webfont.eot');
-		src: local('itsnotcricket'), url('fonts/League_Gothic.woff') format('woff'), url('fonts/League_Gothic.ttf') format('truetype');
+		font-family: WOFFFirstNoLocal;
+		src: url('fonts/League_Gothic.woff'), url('fonts/chunkfive.eot');
+	}
+	@font-face {
+		font-family:Chunk;
+		src: url('fonts/chunkfive.woff'), url('fonts/chunkfive.eot');
+	}
+	@font-face {
+		font-family:LeagueGothic;
+		src: url('fonts/League_Gothic.woff'), url('fonts/League_Gothic.eot');
 	}
 	
 	body {
-		font-family:'ChunkFive Regular';
+		font-family:Georgia,serif;
 		font-size:36px;
 		margin:1em 2em;
 	}
-	.woff {
-		font-family:WOFF;
+	.league {
+		font-family:LeagueGothic;
 	}
-	.back {
-		font-family:backasswards;
+	.chunk {
+		font-family:Chunk;
 	}
-	.jiminy {
-		font-family:Jiminy;
+	.IrishStandard {
+		font-family:IrishStandard,monospace;
+	}
+	.EOTFirstNoLocal {
+		font-family:EOTFirstNoLocal,monospace;
+	}
+	.WOFFFirstNoLocal {
+		font-family:WOFFFirstNoLocal,monospace;
+	}
+	.WOFFFirstLocal {
+		font-family:WOFFFirstLocal,monospace;
+	}
+	.WOFFFirstNoLocal {
+		font-family:WOFFFirstNoLocal,monospace;
+	}
+	.mono {
+		font-family:monospace;
+	}
+	.explain {
+		font-size:75%;
 	}
 	
 </style>
 </head>
 
 <body>
-    <p>This should be in League Gothic (tall, skinny), not Chunk (chunky slab serif)</p>
-	<p class="woff">This should also be League Gothic.</p>
-	<p class="back">Back asswards</p>
-	<p class="jiminy">Jiminy</p>
+	<div class="explain">
+		<p>The examples below follow varying <code>@font-face</code> declaration conventions with an eye towards testing IE9's support for the WOFF format compared with its legacy support for Microsoft's proprietary EOT format. View source for details.</p>
+		<p>Where WOFF is used, <span class="league">League Gothic</span> will be rendered. <span class="chunk">Chunk Five</span> will be rendered when EOT is used. Any failed declarations will show as a <span class="mono">monospaced font.</span></p>
+	</div>
+    <ol>
+    	<li class="IrishStandard">EOT declared first. WOFF after local src. (Paul Irish's standard <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/">smiley syntax</a>.)</li>
+    	<li class="EOTFirstNoLocal">EOT declared first. No local src declared.</li>
+    	<li class="WOFFFirstNoLocal">WOFF declared first. No local src declared.</li>
+    	<li class="WOFFFirstLocal">WOFF declared first, EOT declared after local src.</li>
+    	<li class="WOFFFirstNoLocal">WOFF declared first. No local src.</li>
+    </ol>
+	<p class="return explain"><a href="http://somadesign.ca/2010/testing-ie9s-woff-support/">← Return to blog post.</a></p>
 </body>
 </html>
