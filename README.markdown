@@ -1,1 +1,1 @@
-Testing IE9's WOFF support. See http://somadesign.ca/2010/testing-ie9s-woff-support/ for more.
+Testing IE9's WOFF support. See the [blog post](http://somadesign.ca/2010/testing-ie9s-woff-support/) for more.
