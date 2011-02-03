@@ -16,15 +16,16 @@
 	}
 	@font-face {
 		font-family:Chunk;
-		src: url('fonts/chunkfive.woff'), url('fonts/chunkfive.eot');
+		src: url('fonts/chunkfive.woff'), url('fonts/chunkfive.eot'),url('fonts/chunkfive-roman-webfont.ttf') format('truetype'), url('fonts/chunkfive-roman-webfont.svg#ChunkFive') format('svg');
 	}
 	@font-face {
 		font-family:LeagueGothic;
-		src: url('fonts/League_Gothic.woff'), url('fonts/League_Gothic.eot');
+		src: url('fonts/League_Gothic.woff'), url('fonts/League_Gothic.eot'), 	url('fonts/League_Gothic.ttf') format('truetype'),
+		url('fonts/League_Gothic.svg#LeagueGothic') format('svg');
 	}
 	body {
 		font-family:Georgia,serif;
-		font-size:36px;
+		font-size:48px;
 		margin:1em 2em;
 	}
 	.bulletproofest {
@@ -41,7 +42,7 @@
 		font-family:monospace;
 	}
 	.explain {
-		font-size:67%;
+		font-size:50%;
 	}
 	
 </style>
@@ -50,11 +51,9 @@
 <body>
 	<div class="explain">
 		<p>This is to test Ethan Dunham's <a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax">New Bulletproof Font-Face Syntax</a>.</p>
-		<p>Where WOFF is used, <span class="league">League Gothic</span> will be rendered. <span class="chunk">Chunk Five</span> will be rendered when EOT is used. Any failed declarations will show as a <span class="mono">monospaced font</span>:</p>
+		<p>Where WOFF/TTF/SVG is used, <span class="league">League Gothic</span> will be rendered. <span class="chunk">Chunk Five</span> will be rendered when EOT is used. Any failed declarations will show as a <span class="mono">monospaced font</span>:</p>
 	</div>
     
 	<p class="bulletproofest">The All New Bulletproofest Syntax.</p>
-
-	<p class="return explain"><a href="http://somadesign.ca/2010/testing-ie9s-woff-support/">← Return to blog post.</a></p>
 </body>
 </html>
