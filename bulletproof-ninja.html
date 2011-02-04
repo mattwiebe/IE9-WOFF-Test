@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>New Bulletproof @font-face Syntax Test</title>
+  <title>New Bulletproof @font-face Syntax Test – CSS Ninja variant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 	@font-face {
 		font-family:Bulletproofest;
-		src: url('fonts/chunkfive.eot#') format('embedded-opentype'),
+		src: url('fonts/chunkfive.eot#') format('#embedded-opentype'),
 			url('fonts/League_Gothic.woff') format('woff'),
 			url('fonts/League_Gothic.ttf') format('truetype'),
 			url('fonts/League_Gothic.svg#LeagueGothic') format('svg');
@@ -38,10 +38,11 @@
 
 <body>
 	<div class="explain">
-		<p>This is to test Ethan Dunham's <a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax">New Bulletproof Font-Face Syntax</a>.</p>
+		<p>This is to test the <a href="http://www.thecssninja.com/demo/css_fontface/">CSS Ninja</a> variant of Ethan Dunham's <a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax">New Bulletproof Font-Face Syntax</a>.</p>
 		<p>All browsers should load <strong>one</strong> font and <em>one only</em>. Where WOFF/TTF/SVG is used, <a href="http://www.fontsquirrel.com/fonts/League-Gothic">League Gothic</a> will be rendered. <a href="http://www.fontsquirrel.com/fonts/ChunkFive">Chunk Five</a> will be rendered when EOT is used. A failed declaration will show as a <span class="mono">monospaced font</span>:</p>
 	</div>
     
 	<p class="bulletproofest">The All New Bulletproofest Syntax.</p>
+	<p class="explain">Try the original <a href="bulletproofest.html">Fontspring syntax</a>.</p>
 </body>
 </html>
